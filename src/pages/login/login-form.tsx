@@ -25,13 +25,13 @@ export const LoginForm = () => {
         register, // Função para registrar seus inputs
         handleSubmit, // Função para lidar com a submissão do formulário
         formState: { errors, isSubmitting }, // Objeto que contém os erros e o estado de submissão
-        reset, // Para resetar o formulário após a submissão (opcional)
+
     } = useForm<LoginInputs>({
         resolver: zodResolver(loginSchema)
     });
 
     const onSubmit = async (data: LoginInputs) => {
-        const res = await login(data)
+        await login(data)
     }
 
     const [eyeClosed, setEyeClosed] = useState<boolean>(true)

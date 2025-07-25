@@ -1,9 +1,8 @@
-import { db } from "../firebase/config"
+import { db } from "../firebase/config.ts"
 import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, updateProfile, signOut } from "firebase/auth"
 import { useState, useEffect } from "react"
 
 import type { newUser, userLogin } from "@/interfaces/user-interface.js"
-
 
 export const useAuthentication = () => {
     const [error, setError] = useState<string | null>(null)
@@ -36,7 +35,6 @@ export const useAuthentication = () => {
 
         } catch (error: unknown) {
             if (typeof error === 'object' && error !== null && 'code' in error && 'message' in error) {
-                console.log(error.message)
 
                 let systemErrorMessage
 
