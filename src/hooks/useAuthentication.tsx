@@ -11,7 +11,7 @@ export const useAuthentication = () => {
 
     //cleanup
     //deal with memory liquid
-
+    db
     const auth = getAuth()
 
     function checkIfIsCancelled() {
